@@ -1,0 +1,7 @@
+@font-face {
+    font-family: InterFont;
+    src: url('elements/fonts/Inter-Italic-VariableFont_opsz\,wght.ttf') format('ttf'),
+         url('elements/fonts/Inter-VariableFont_opsz\,wght.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
