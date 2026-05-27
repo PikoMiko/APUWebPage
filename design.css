@@ -1,4 +1,5 @@
 header{
+    width: 100%;
 	background-color: red;
     color: white;
 }
@@ -36,8 +37,39 @@ footer{
     background-color:rgb(248,248,248);
     color: black;
     text-align: center;
+    margin-top: auto;
+
 }
 
 body{
     font-family: 'InterFont', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.options{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 40px;
+}
+
+.button{
+    width: 300px;
+    height: 300px;
+    border-radius: 40px;
+    object-fit: cover;
+    border: 2px solid navy;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    color: black;
+}
+
+.button img{
+    width: 270px;
+    height: 270px;
 }
