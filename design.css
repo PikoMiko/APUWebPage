@@ -19,6 +19,15 @@
     font-style: normal;
 }
 
+body{
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 header{
     width: 100%;
 	background-color: red;
@@ -30,21 +39,14 @@ header{
   align-items: center;       /* Vertically centers the divs */
 }
 
-.navbar {
+nav {
     display: flex;
     justify-content: center;
     align-items: center;
     flex: 1;
 }
 
-.navbar ul{
-    list-style-type: none;
-    margin: 1px;
-    padding: 1px;
-    overflow: hidden;
-}
-
-.navbar a{
+nav a {
     padding: 10px;
     display: block;
     color: white;
@@ -53,24 +55,11 @@ header{
     text-align: center;
 }
 
-.navbar a:hover{
-    background-color: hsl(0,0%, 10%);
+nav a:hover {
+    background-color: hsl(0, 0%, 10%);
 }
 
-.navbar li{
-    float: left;
-}
-
-body{
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-.options{
+#options{
     align-items: center;
     justify-content: center;
     display: flex;
@@ -108,6 +97,31 @@ input[type=text]{
     outline: none;
 }
 
+.banner-container {
+  /* Set image and ensure it covers the area */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('elements/multimedia/Images/864988.jpg');
+  background-size: cover;
+  background-position: center;
+  
+  /* Size and alignment */
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.banner-text{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.banner-text h1{
+    font-size: 50px;
+}
+
 .imgpreview{
     border: 1px solid black;
 }
@@ -120,9 +134,12 @@ input[type=text]{
 
 footer{
     background-color:rgb(248,248,248);
+    border-top: 1px solid black;
     font-family: 'Playfair', sans-serif;
     color: black;
+    height: 40px;
     text-align: center;
     margin-top: auto;
-
+    padding-top: auto;
+    
 }

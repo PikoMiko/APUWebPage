@@ -1,17 +1,15 @@
 const headerTemplate = document.createElement('template');
 headerTemplate.innerHTML = `
         <header class="header">
-        <a href="#Home"><img src="elements/multimedia/logo.png" alt="Home" width="55" height="55"></a>
-            <div class="navbar">
-                <ul>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Text here</a></li>
-                    <li><a href="#">Misc</a></li>
-                    <li><a href="#">Sponsor</a></li>
-                    <li><a href="sign up.html">Sign up</a></li>
-                </ul>
-            </div>
+        <a href="home.html" id="home"><img src="elements/multimedia/Images/logo.png" alt="Home" width="55" height="55"></a>
+            <nav>
+                <a href="#">News</a>
+                <a href="#">Contact</a>
+                <a href="#">Text here</a>
+                <a href="#">Misc</a>
+                <a href="#">Sponsor</a>
+                <a href="sign up.html">Sign up</a>
+            <nav>
         </header>
 `;
 document.body.prepend(headerTemplate.content);
