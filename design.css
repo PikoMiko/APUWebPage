@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('elements/fonts/Inter.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'GothicHead';
+    src: url('elements/fonts/SpecialGothicHead.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
 header{
     width: 100%;
 	background-color: red;
@@ -7,6 +21,13 @@ header{
 .header {
   display: flex;             /* Makes children sit side-by-side */
   align-items: center;       /* Vertically centers the divs */
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
 }
 
 .navbar ul{
@@ -42,7 +63,7 @@ footer{
 }
 
 body{
-    font-family: 'InterFont', sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -73,3 +94,15 @@ body{
     width: 270px;
     height: 270px;
 }
+
+input{
+    
+}
+
+#test{
+    font-family: 'GothicHead', sans-serif;
+    color: white;
+    text-align: center;
+    background-color: rgb(117, 11, 11);
+}
+

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="design.css" rel="stylesheet"/>
+    <link href="format.css" rel="stylesheet"/>
+    <title>Document</title>
+</head>
+<body>
+    <form method="get" id="playerinfo">
+        <div id="players"></div>
+    </form>
+
+    <form method="get" id="teaminfo">
+        <label><b>Team Name</b></label>
+        <input type="text" name="team" placeholder="Team Name" required/><br/><br/>
+        <label>Team Logo</label>
+        <input type="file" name="teamLogo" accept="image/png" required/>
+    </form>
+</body>
+</html>
+<script src="script.js"></script>

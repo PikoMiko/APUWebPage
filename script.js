@@ -1,6 +1,6 @@
 const headerTemplate = document.createElement('template');
 headerTemplate.innerHTML = `
-  <header class="header">
+        <header class="header">
         <a href="#Home"><img src="elements/multimedia/logo.png" alt="Home" width="55" height="55"></a>
             <div class="navbar">
                 <ul>
@@ -18,6 +18,23 @@ document.body.prepend(headerTemplate.content);
 
 const footerTemplate = document.createElement('template');
 footerTemplate.innerHTML = `
-  <footer>All rights reserved</footer>
+  <footer>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero hic natus recusandae nisi magnam eum expedita tempora doloremque animi? Ab nisi possimus nulla repellendus sapiente recusandae aperiam consectetur animi adipisci!</footer>
 `;
 document.body.appendChild(footerTemplate.content);
+
+const playerCount = 5;
+        const container = document.getElementById('players');
+
+        for (let i = 1; i <= playerCount; i++) {
+            const section = document.createElement('section');
+            section.innerHTML = `
+                <label><b>Player ${i}</b></label>
+                <input type="text" name="first[]" placeholder="First Name" required />
+                <input type="text" name="last[]" placeholder="Last Name" required /><br/>
+                <label><b>NRIC/Passport No.</b></label>
+                <input type="text" name="id[]" placeholder="010203100001" required /><br/>
+                <label><b>Contact number:</b></label>
+                <input type="text" name="contact[]" placeholder="+60123456789" required /><br/><br/>
+            `;
+            container.appendChild(section);
+        }
