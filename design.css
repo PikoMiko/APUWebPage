@@ -12,6 +12,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Playfair';
+    src: url(elements/fonts/Playfair.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
 header{
     width: 100%;
 	background-color: red;
@@ -41,7 +48,7 @@ header{
     padding: 10px;
     display: block;
     color: white;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Playfair', sans-serif;
     text-decoration: none;
     text-align: center;
 }
@@ -52,14 +59,6 @@ header{
 
 .navbar li{
     float: left;
-}
-
-footer{
-    background-color:rgb(248,248,248);
-    color: black;
-    text-align: center;
-    margin-top: auto;
-
 }
 
 body{
@@ -95,10 +94,23 @@ body{
     height: 270px;
 }
 
-input{
-    
+label{
+    font-weight: 400;
+}
+input[type=text]{
+    border: 2px solid gold;
+    border-radius: 4px;
+    padding: 5px;
+    margin: 3px 0;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    box-sizing: border-box;
+    outline: none;
 }
 
+.imgpreview{
+    border: 1px solid black;
+}
 #test{
     font-family: 'GothicHead', sans-serif;
     color: white;
@@ -106,3 +118,11 @@ input{
     background-color: rgb(117, 11, 11);
 }
 
+footer{
+    background-color:rgb(248,248,248);
+    font-family: 'Playfair', sans-serif;
+    color: black;
+    text-align: center;
+    margin-top: auto;
+
+}

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="design.css" rel="stylesheet"/>
     <link href="format.css" rel="stylesheet"/>
-    <title>Document</title>
+    <title>Register - Team</title>
 </head>
 <body>
     <form method="get" id="playerinfo">
@@ -13,10 +13,11 @@
     </form>
 
     <form method="get" id="teaminfo">
-        <label><b>Team Name</b></label>
+        <label><b>Team Name</b></label><br/>
         <input type="text" name="team" placeholder="Team Name" required/><br/><br/>
-        <label>Team Logo</label>
-        <input type="file" name="teamLogo" accept="image/png" required/>
+        <label><b>Team Logo</b></label>
+        <input type="file" id="fileInput" name="teamLogo" accept="image/png" required/>
+        <div class="imgpreview"><img id="preview" src="" alt="Image Preview"></div>
     </form>
 </body>
 </html>

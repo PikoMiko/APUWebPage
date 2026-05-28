@@ -11,3 +11,10 @@
     font-weight: 400;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Playfair';
+    src: url(elements/fonts/Playfair.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}

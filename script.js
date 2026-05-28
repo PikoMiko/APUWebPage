@@ -9,7 +9,7 @@ headerTemplate.innerHTML = `
                     <li><a href="#">Text here</a></li>
                     <li><a href="#">Misc</a></li>
                     <li><a href="#">Sponsor</a></li>
-                    <li><a href="#">Sign up</a></li>
+                    <li><a href="sign up.html">Sign up</a></li>
                 </ul>
             </div>
         </header>
@@ -18,9 +18,9 @@ document.body.prepend(headerTemplate.content);
 
 const footerTemplate = document.createElement('template');
 footerTemplate.innerHTML = `
-  <footer>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero hic natus recusandae nisi magnam eum expedita tempora doloremque animi? Ab nisi possimus nulla repellendus sapiente recusandae aperiam consectetur animi adipisci!</footer>
+  <footer>test!</footer>
 `;
-document.body.appendChild(footerTemplate.content);
+document.body.append(footerTemplate.content);
 
 const playerCount = 5;
         const container = document.getElementById('players');
@@ -28,7 +28,7 @@ const playerCount = 5;
         for (let i = 1; i <= playerCount; i++) {
             const section = document.createElement('section');
             section.innerHTML = `
-                <label><b>Player ${i}</b></label>
+                <label><b>Player ${i}</b></label><br/>
                 <input type="text" name="first[]" placeholder="First Name" required />
                 <input type="text" name="last[]" placeholder="Last Name" required /><br/>
                 <label><b>NRIC/Passport No.</b></label>
@@ -38,3 +38,14 @@ const playerCount = 5;
             `;
             container.appendChild(section);
         }
+
+const fileInput = document.getElementById("fileInput");
+const preview = document.getElementById("preview");
+
+fileInput.addEventListener("change", function () {
+    const file = this.files[0];
+
+    if (file) {
+        preview.src = URL.createObjectURL(file);
+    }
+});
