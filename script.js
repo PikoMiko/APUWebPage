@@ -6,9 +6,9 @@ headerTemplate.innerHTML = `
                 <a href="#">News</a>
                 <a href="contactUs.html">Contact</a>
                 <a href="about.html">About</a>
-                <a href="#">Text here</a>
-                <a href="#">Misc</a>
-                <a href="#">Sponsor</a>
+                <a href="Event schedule.html">Events</a>
+                <a href="FAQ.html">Misc</a>
+                <a href="Sponsors&Partners.html">Sponsor</a>
                 <a href="sign up.html">Sign up</a>
             <nav>
         </header>

@@ -112,6 +112,11 @@ input[type=text]{
   text-align: center;
 }
 
+::placeholder {
+  color: rgb(203, 198, 96);
+  opacity: 1;
+}
+
 .banner-text{
     display: flex;
     gap: 10px;
