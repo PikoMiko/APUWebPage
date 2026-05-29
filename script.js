@@ -4,7 +4,8 @@ headerTemplate.innerHTML = `
         <a href="home.html" id="home"><img src="elements/multimedia/Images/logo.png" alt="Home" width="55" height="55"></a>
             <nav>
                 <a href="#">News</a>
-                <a href="#">Contact</a>
+                <a href="contactUs.html">Contact</a>
+                <a href="about.html">About</a>
                 <a href="#">Text here</a>
                 <a href="#">Misc</a>
                 <a href="#">Sponsor</a>
@@ -47,3 +48,16 @@ fileInput.addEventListener("change", function () {
         preview.src = URL.createObjectURL(file);
     }
 });
+
+function validateContactForm() {
+    var nameInput = document.getElementById("contactName").value;
+    var messageInput = document.getElementById("contactMessage").value;
+
+
+    if (nameInput === "" || messageInput === "") {
+        alert("Please fill in all fields!");
+    } else {
+        alert("Thank you, " + nameInput + "! Your message has been sent successfully.");
+        document.getElementById("contactForm").reset();
+    }
+}
