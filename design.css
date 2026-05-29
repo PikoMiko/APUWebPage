@@ -111,25 +111,39 @@ input[type=text]{
   color: white;
   text-align: center;
 }
-
-::placeholder {
-  color: rgb(203, 198, 96);
-  opacity: 1;
-}
-
 .banner-text{
     display: flex;
     gap: 10px;
     flex-direction: column;
 }
 
+::placeholder {
+  color: rgb(203, 198, 96);
+  opacity: 1;
+}
+
 .banner-text h1{
     font-size: 50px;
+    font-family: 'GothicHead', sans-serif;
 }
 
 .imgpreview{
     border: 1px solid black;
+    size: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
+
+#preview{
+    max-width: 50%;
+    max-height: 50%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
 #test{
     font-family: 'GothicHead', sans-serif;
     color: white;
