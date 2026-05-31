@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resources - APU Sports</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="design.css" rel="stylesheet"/>
+    <link href="format.css" rel="stylesheet"/>
+    <style>
+        .resources-container {
+            padding: 40px;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .resources-container h1 {
+            font-family: 'GothicHead', sans-serif;
+            color: rgb(117, 11, 11);
+        }
+        .section-title {
+            font-family: 'Playfair', sans-serif;
+            font-size: 20px;
+            color: gold;
+            border-bottom: 2px solid gold;
+            padding-bottom: 6px;
+            margin: 30px 0 16px 0;
+        }
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
+        }
+        .resource-card {
+            border: 2px solid gold;
+            border-radius: 8px;
+            padding: 18px;
+            background: #0a0a0a;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: transform 0.2s;
+        }
+        .resource-card:hover { transform: translateY(-3px); }
+        .resource-icon {
+            font-size: 36px;
+        }
+        .resource-card h3 {
+            margin: 0;
+            font-family: 'GothicHead', sans-serif;
+            font-size: 15px;
+            color: white;
+        }
+        .resource-card p {
+            margin: 0;
+            font-size: 13px;
+            color: #aaa;
+            flex: 1;
+        }
+        .resource-meta {
+            font-size: 12px;
+            color: gold;
+        }
+        .download-btn {
+            display: inline-block;
+            padding: 7px 16px;
+            background: rgb(117,11,11);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            text-decoration: none;
+            text-align: center;
+            transition: background 0.2s;
+        }
+        .download-btn:hover { background: rgb(160,20,20); }
+        .faq-note {
+            background: #0a0a0a;
+            border-left: 4px solid gold;
+            padding: 14px 18px;
+            margin-top: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .faq-note a { color: gold; }
+    </style>
+</head>
+<body>
+    <div class="resources-container">
+        <h1>Resources &amp; Downloads</h1>
+        <p>Access all official documents, guides, and materials for the APU Sports Championship 2026.</p>
+
+        <div class="section-title">📋 Official Documents</div>
+        <div class="resource-grid">
+
+            <div class="resource-card">
+                <div class="resource-icon">📄</div>
+                <h3>Participant Handbook</h3>
+                <p>Complete guide for registered participants including event schedules, venue maps, and code of conduct.</p>
+                <div class="resource-meta">PDF · 2.1 MB · Updated May 2026</div>
+                <button class="download-btn" onclick="fakeDownload('Participant_Handbook_2026.pdf')">⬇ Download</button>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">📋</div>
+                <h3>Football Rules &amp; Regulations</h3>
+                <p>Official rules for the 5-a-side Football Tournament including scoring, conduct, and referee guidelines.</p>
+                <div class="resource-meta">PDF · 0.8 MB · Updated May 2026</div>
+                <button class="download-btn" onclick="fakeDownload('Football_Rules_2026.pdf')">⬇ Download</button>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">📋</div>
+                <h3>Basketball Rules &amp; Regulations</h3>
+                <p>Official rules for the 3-on-3 Basketball competition including bracket format and foul rules.</p>
+                <div class="resource-meta">PDF · 0.7 MB · Updated May 2026</div>
+                <button class="download-btn" onclick="fakeDownload('Basketball_Rules_2026.pdf')">⬇ Download</button>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">📋</div>
+                <h3>Swimming Competition Rules</h3>
+                <p>Rules and event details for all swimming categories including relay and individual events.</p>
+                <div class="resource-meta">PDF · 0.6 MB · Updated May 2026</div>
+                <button class="download-btn" onclick="fakeDownload('Swimming_Rules_2026.pdf')">⬇ Download</button>
+            </div>
+
+        </div>
+
+        <div class="section-title">🗓️ Schedules & Forms</div>
+        <div class="resource-grid">
+
+            <div class="resource-card">
+                <div class="resource-icon">📅</div>
+                <h3>Full Event Schedule</h3>
+                <p>Printable version of the complete event timetable across all 3 days.</p>
+                <div class="resource-meta">PDF · 0.4 MB</div>
+                <button class="download-btn" onclick="fakeDownload('Event_Schedule_2026.pdf')">⬇ Download</button>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">📝</div>
+                <h3>Team Registration Form</h3>
+                <p>Printable team registration form for groups without internet access.</p>
+                <div class="resource-meta">PDF · 0.3 MB</div>
+                <button class="download-btn" onclick="fakeDownload('Team_Registration_Form.pdf')">⬇ Download</button>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">🙋</div>
+                <h3>Volunteer Application Form</h3>
+                <p>Printable form for students who wish to volunteer at the event.</p>
+                <div class="resource-meta">PDF · 0.3 MB</div>
+                <button class="download-btn" onclick="fakeDownload('Volunteer_Form.pdf')">⬇ Download</button>
+            </div>
+
+        </div>
+
+        <div class="section-title">🎨 Promotional Materials</div>
+        <div class="resource-grid">
+
+            <div class="resource-card">
+                <div class="resource-icon">🖼️</div>
+                <h3>Official Event Poster</h3>
+                <p>High-resolution promotional poster for printing and sharing on social media.</p>
+                <div class="resource-meta">PNG · 4.2 MB</div>
+                <button class="download-btn" onclick="fakeDownload('Event_Poster_2026.png')">⬇ Download</button>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">📰</div>
+                <h3>Event Brochure</h3>
+                <p>Tri-fold brochure with event overview, activities, and sponsor information.</p>
+                <div class="resource-meta">PDF · 1.5 MB</div>
+                <button class="download-btn" onclick="fakeDownload('Event_Brochure_2026.pdf')">⬇ Download</button>
+            </div>
+
+        </div>
+
+        <div class="faq-note">
+            <strong>Can't find what you need?</strong> Visit our <a href="FAQ.html">FAQ page</a> or <a href="contactUs.html">contact us</a> directly for assistance.
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function fakeDownload(filename) {
+            alert('Downloading: ' + filename + '\n\n(Note: This is a demo. Replace with actual file links for submission.)');
+        }
+    </script>
+</body>
+</html>
