@@ -13,12 +13,18 @@
         </form>
 
         <form method="get" id="teaminfo">
+            <label>Event</label>
+            <select name="events">
+                <option value="Event1">Event 1</option>
+                <option value="Event2">Event 2</option>
+                <option value="Event3">Event 3</option>
+            </select> <br/><br/>
             <label><b>Team Name</b></label><br/>
             <input type="text" name="team" placeholder="Team Name" required/><br/><br/>
             <label><b>Team Logo</b></label>
             <input type="file" id="fileInput" name="teamLogo" accept="image/jpg/png/webp" required/>
             <div class="imgpreview"><img id="preview" src="" alt="Image Preview"></div>
         </form>
+        <script src="script.js"></script>
     </body>
 </html>
-<script src="script.js"></script>
