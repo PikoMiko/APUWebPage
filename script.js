@@ -3,7 +3,7 @@ headerTemplate.innerHTML = `
   <header class="header">
     <a href="home.html" id="home"><img src="elements/multimedia/Images/logo.png" alt="Home" width="55" height="55"></a>
     <nav>
-      <a href="#">News</a>
+      <a href="news.html">News</a>
       <a href="about.html">About</a>
       <div class="dropdown">
         <button class="dropbtn">Events
@@ -12,6 +12,7 @@ headerTemplate.innerHTML = `
         <div class="dropdown-content">
           <a href="information.html">Information</a>
           <a href="Event schedule.html">Schedule</a>
+          <a href="resources.html">Resources</a>
           <a href="#">Gallery</a>
         </div>
       </div>
