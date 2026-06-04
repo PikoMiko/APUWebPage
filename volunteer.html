@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="design.css" rel="stylesheet"/>
+    <link href="format.css" rel="stylesheet"/>
+    <title>Register - Volunteer</title>
+</head>
+    <body id="volunteerform">
+        <div class="regis">
+            <form method="get">
+                <div class="playerinfo">    
+                    <label><b>Volunteer Information</b></label><br/>
+                    <input type="text" class="name" name="first[]" placeholder="First Name" required />
+                    <input type="text" class="name" name="last[]" placeholder="Last Name" required /><br/>
+                    <input type="text" class="notname" name="id[]" placeholder="NRIC/Passport No." required /><br/>
+                    <input type="text" class="notname" name="contact[]" placeholder="Contact number" required /><br/><br/>
+                </div>
+            </form>
+            <form method="get" id="moreinfo">
+                <label>T-Shirt Size</label><br/>
+                    <select class="notname" name="events" required>
+                        <option value="placeholder">-- Select Size --</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select> <br/><br/>
+                <label>Dietary Restrictions</label><br/>
+                <textarea class="notname" name="dietary[]" placeholder="Please specify any dietary restrictions"></textarea><br/><br/>
+                <label>Are you comfortable standing for long periods or lifting up to 15kg?</label><br/>
+                <input type="radio" name="physical" value="Yes" required> Yes
+                <input type="radio" name="physical" value="No" required> No<br/><br/>
+            </form>
+        </div>
+        
+        <button type="submit" class="submit-btn">
+          Submit
+        </button>
+
+        <script src="script.js"></script>
+    </body>
+</html>

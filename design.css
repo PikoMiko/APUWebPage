@@ -28,6 +28,32 @@ body{
     flex-direction: column;
 }
 
+.banner-text{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.banner-text h1{
+    font-size: 50px;
+    font-family: 'GothicHead', sans-serif;
+}
+
+.banner-container {
+  /* Set image and ensure it covers the area */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('elements/multimedia/Images/864988.jpg');
+  background-size: cover;
+  background-position: center;
+  
+  /* Size and alignment */
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
 header {
     width: 100%;
     background-color: #b1121b;
@@ -121,6 +147,13 @@ nav a:hover,
     display: block;
 }
 
+#test{
+    font-family: 'GothicHead', sans-serif;
+    color: white;
+    text-align: center;
+    background-color: rgb(117, 11, 11);
+}
+
 #options{
     align-items: center;
     justify-content: center;
@@ -145,49 +178,52 @@ nav a:hover,
     height: 270px;
 }
 
+
+.regis{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.playerinfo{
+    margin-top: 30px;
+}
+
 label{
     font-weight: 400;
 }
-input[type=text]{
+.name{
     border: 2px solid gold;
-    border-radius: 4px;
+    border-radius: 7px;
     padding: 5px;
-    margin: 3px 0;
-    background-color: rgb(0, 0, 0);
-    color: white;
+    margin: 10px 0;
+    height: 50px;
+    width: 300px;
+    background-color: white;
+    color: black;
     box-sizing: border-box;
     outline: none;
 }
 
-.banner-container {
-  /* Set image and ensure it covers the area */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('elements/multimedia/Images/864988.jpg');
-  background-size: cover;
-  background-position: center;
-  
-  /* Size and alignment */
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
-}
-.banner-text{
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
+.notname{
+    border: 2px solid gold;
+    border-radius: 7px;
+    padding: 5px;
+    margin: 10px 0;
+    height: 50px;
+    width: 605px;
+    background-color: white;
+    color: black;
+    box-sizing: border-box;
+    outline: none;
 }
 
 ::placeholder {
-  color: rgb(203, 198, 96);
-  opacity: 1;
+  color: black;
+  opacity: 50%;
 }
 
-.banner-text h1{
-    font-size: 50px;
-    font-family: 'GothicHead', sans-serif;
-}
 
 .imgpreview{
     border: 1px solid black;
@@ -196,21 +232,18 @@ input[type=text]{
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin-left: 150px;
 }
 
 #preview{
-    max-width: 50%;
-    max-height: 50%;
+    max-width: 100%;
+    max-height: 100%;
     width: auto;
     height: auto;
     object-fit: contain;
-}
-
-#test{
-    font-family: 'GothicHead', sans-serif;
-    color: white;
-    text-align: center;
-    background-color: rgb(117, 11, 11);
 }
 
 footer{
@@ -223,4 +256,22 @@ footer{
     margin-top: auto;
     padding-top: auto;
     
+}
+
+/* Submit button styling: keep it compact and centered */
+.submit-btn{
+    width: auto;
+    align-self: center;
+    padding: 10px 20px;
+    background-color: rgb(117, 11, 11);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+    transition: background-color 150ms ease;
+}
+
+.submit-btn:hover{
+    background-color: rgb(140, 20, 20);
 }

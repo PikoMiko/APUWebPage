@@ -41,19 +41,20 @@ function initPage() {
   document.body.append(footerTemplate.content);
 
   const playerCount = 5;
-  const container = document.getElementById('players');
+  const isParticipantFormPage = document.body.id === 'participant-form';
+  const container = isParticipantFormPage ? document.getElementById('players') : null;
 
   if (container) {
     for (let i = 1; i <= playerCount; i++) {
       const section = document.createElement('section');
       section.innerHTML = `
-        <label><b>Player ${i}</b></label><br/>
-        <input type="text" name="first[]" placeholder="First Name" required />
-        <input type="text" name="last[]" placeholder="Last Name" required /><br/>
-        <label><b>NRIC/Passport No.</b></label>
-        <input type="text" name="id[]" placeholder="010203100001" required /><br/>
-        <label><b>Contact number:</b></label>
-        <input type="text" name="contact[]" placeholder="+60123456789" required /><br/><br/>
+      <div class="playerinfo">    
+          <label><b>Player ${i}</b></label><br/>
+          <input type="text" class="name" name="first[]" placeholder="First Name" required />
+          <input type="text" class="name" name="last[]" placeholder="Last Name" required /><br/>
+          <input type="text" class="notname" name="id[]" placeholder="NRIC/Passport No." required /><br/>
+          <input type="text" class="notname" name="contact[]" placeholder="Contact number" required /><br/><br/>
+      </div>
       `;
       container.appendChild(section);
     }
