@@ -1,0 +1,174 @@
+:root{
+    --muted: #e03535;
+    --text:  #222;
+    --surface: #f7f7f7;
+    --accent: #b1121b;
+    --max-width: 1100px
+}
+
+.labels{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.label-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.racetitle .minititle{
+    color:var(--muted);
+    font-size: 15px;
+    letter-spacing: 1.4px;
+    font-family: GothicHead, sans-serif;
+
+}
+
+.racetitle .resultstitle{
+    color:var(--text);
+    font-size: 50px;
+    font-family: GothicHead, sans-serif;
+}
+
+.rounds{
+    display: flex;
+    gap: 20px;
+}
+
+.rounds button{
+    border:1px solid rgba(0, 0, 0, 0.775);
+    background: var(--surface) ;
+    border-radius: 250px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: var(--text);
+    font-family: GothicHead, sans-serif;
+}
+
+.rounds button.active, 
+.round button:hover{
+    background:var(--accent);
+    color: #ffffff;
+    border-color:var(--accent);
+}
+
+/* .meta-data{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    color:var(--muted);
+}
+
+.racerinfo{
+    display: grid;
+    grid-template-columns: 0.8fr 1.6fr 0.6fr;
+    gap: 12px;
+    padding: 14px 0; 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.775);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+} */
+
+#renderboard {
+    display: grid;
+    gap: 12px;
+    margin-top:14px;
+    
+}
+.leaderboard-card{
+    display: grid;
+    gap: 10px;
+}
+
+.leaderboard-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    background: var(--surface);
+    padding: 10px 14px;
+    
+}
+
+.leaderboard-row{
+    display: grid;
+    grid-template-columns: 0.8fr 1.6fr 0.6fr;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.775);
+    border-radius: 10px;
+    font-family: DM Mono, monospace;
+}
+
+.leaderboard-row--head{
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.top-three{
+    background: linear-gradient(180deg, rgba(177,18,27,0.06), #ffffff);
+}
+
+.leaderboard-rank{
+    font-weight: 700;
+    font-size: 30px;
+    font-family: DM Mono, monospace;
+    color: var(--accent);
+}
+
+.medal{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 72px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-family: GothicHead, sans-serif;
+}
+
+.medal-1,
+.medal-gold {
+    background: #ffd700;
+    color: #111;
+}
+
+.medal-2,
+.medal-silver {
+    background: #c0c0c0;
+    color: #111;
+}
+
+.medal-3,
+.medal-bronze {
+    background: #cd7f32;
+    color: #111;
+}
+
+.entry-main{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+ .entry-meta{
+    font-size: 0.9rem;
+    color: var(--muted);
+ }
+
+ .leaderboard-score{
+    font-weight:700;
+ }
+
+.leaderboard-score--points{
+    color: var(--accent);
+}
