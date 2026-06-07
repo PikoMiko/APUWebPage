@@ -34,7 +34,7 @@ headerTemplate.innerHTML = `
 
 const footerTemplate = document.createElement('template');
 footerTemplate.innerHTML = `
-  <footer>test!</footer>
+  <footer>All rights reserved</footer>
 `;
 
 function initPage() {
