@@ -172,23 +172,70 @@ label{
 }
 
 .sports-menu {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 2px solid #d00;
-  border-radius: 4px;
-  padding: 18px 16px;
-  background: #fff;
-  cursor: pointer;
+    width: auto;
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid #d00;
+    border-radius: 12px;
+    padding: 18px 16px;
+    background: #fff;
+    cursor: pointer;
+    margin: 20px;
+    gap: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.sports-menu::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.32);
+    pointer-events: none;
+}
+
+.info-btn:hover{
+    transform: translateY(-3px);
 }
 
 /* Arrow button */
 .info-btn {
-  width: 48px;
-  height: 42px;
+  width: 50px;
+  height: 120px;
   border: 2px solid #d00;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  background-color: white;
 }
+
+.info-container p{
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 20px;
+}
+
+.sports-text {
+    flex: 1;
+    font-size: 42px;
+    font-family: 'GothicHead', sans-serif;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+   
