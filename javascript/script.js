@@ -60,9 +60,19 @@ function initPage() {
       container.appendChild(section);
     }
   }
+}
 
-  //
-  
+function confirmInfo() {
+    const ask = window.confirm("Are you sure the information below is correct?");
+    if (ask) {
+        window.alert("Sign up complete. Redirecting...");
+
+        window.location.href = "sign up.html";
+
+    }
+}
+
+
   const fileInput = document.getElementById('fileInput');
   const preview = document.getElementById('preview');
   if (fileInput && preview) {
@@ -89,7 +99,7 @@ function initPage() {
       }
     });
   }
-}
+
 
 
 
