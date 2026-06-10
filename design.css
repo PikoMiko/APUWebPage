@@ -41,7 +41,7 @@ body{
     background-color: rgb(117, 11, 11);
 }
 
-#options{
+.options{
     align-items: center;
     justify-content: center;
     display: flex;
