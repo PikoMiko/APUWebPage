@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>News & Updates - APU Sports</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="design.css" rel="stylesheet"/>
+    <link href="format.css" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            color: #111;
+        }
+
+        .news-container {
+            padding: 40px;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .news-container h1 {
+            font-family: 'GothicHead', sans-serif;
+            color: rgb(117, 11, 11);
+            margin-bottom: 8px;
+        }
+        .news-container > p {
+            color: #333;
+        }
+        .filter-bar {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .filter-btn {
+            padding: 6px 18px;
+            border: 2px solid gold;
+            background: #111;
+            color: white;
+            cursor: pointer;
+            border-radius: 20px;
+            font-family: 'Playfair', sans-serif;
+            transition: background 0.2s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background-color: rgb(117, 11, 11);
+        }
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 10px;
+        }
+        .news-card {
+            border: 2px solid gold;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s;
+            background-color: #fff;
+        }
+        .news-card:hover {
+            transform: translateY(-4px);
+        }
+        .news-card-header {
+            background-color: rgb(117, 11, 11);
+            padding: 10px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .news-tag {
+            font-size: 11px;
+            text-transform: uppercase;
+            background: gold;
+            color: black;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        .news-date {
+            font-size: 12px;
+            color: rgba(255,255,255,0.9);
+        }
+        .news-card-body {
+            padding: 16px;
+            background-color: #fff;
+            color: #111;
+        }
+        .news-card-body h3 {
+            margin: 0 0 8px 0;
+            font-family: 'GothicHead', sans-serif;
+            font-size: 16px;
+            color: rgb(117, 11, 11);
+        }
+        .news-card-body p {
+            font-size: 14px;
+            margin: 0;
+            line-height: 1.5;
+            color: #333;
+        }
+        .news-card-body .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            color: rgb(117, 11, 11);
+            font-size: 13px;
+            cursor: pointer;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        .hidden { display: none; }
+
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-overlay.active { display: flex; }
+        .modal-box {
+            background: #fff;
+            color: #111;
+            border: 2px solid gold;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 560px;
+            width: 90%;
+            position: relative;
+        }
+        .modal-box h2 {
+            font-family: 'GothicHead', sans-serif;
+            color: rgb(117, 11, 11);
+            margin-top: 0;
+        }
+        .modal-box p {
+            line-height: 1.6;
+            color: #333;
+        }
+        .modal-close {
+            position: absolute;
+            top: 14px; right: 18px;
+            font-size: 22px;
+            cursor: pointer;
+            color: rgb(117, 11, 11);
+            font-weight: bold;
+        }
+        .modal-close:hover {
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div class="news-container">
+        <h1>News &amp; Updates</h1>
+        <p>Stay up to date with the latest announcements for the APU Sports Championship 2026.</p>
+
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterNews('all', this)">All</button>
+            <button class="filter-btn" onclick="filterNews('announcement', this)">Announcements</button>
+            <button class="filter-btn" onclick="filterNews('deadline', this)">Deadlines</button>
+            <button class="filter-btn" onclick="filterNews('result', this)">Results</button>
+        </div>
+
+        <div class="news-grid" id="newsGrid">
+
+            <div class="news-card" data-category="announcement">
+                <div class="news-card-header">
+                    <span class="news-tag">Announcement</span>
+                    <span class="news-date">May 20, 2026</span>
+                </div>
+                <div class="news-card-body">
+                    <h3>Championship 2026 Officially Launched!</h3>
+                    <p>The APU Sports Championship 2026 has been officially announced. Registration is now open for all faculties.</p>
+                    <span class="read-more" onclick="openModal('Championship 2026 Officially Launched!', 'The APU Sports Championship 2026 has been officially announced and registration is now open. This year\'s event will feature Football, Basketball, and Swimming competitions held across June 10–12. All APU students are welcome to participate. Head to the Sign Up page to register your team or volunteer today!')">Read more →</span>
+                </div>
+            </div>
+
+            <div class="news-card" data-category="deadline">
+                <div class="news-card-header">
+                    <span class="news-tag">Deadline</span>
+                    <span class="news-date">May 28, 2026</span>
+                </div>
+                <div class="news-card-body">
+                    <h3>Team Registration Closes June 1</h3>
+                    <p>All team registrations must be completed by June 1, 2026. Late submissions will not be accepted.</p>
+                    <span class="read-more" onclick="openModal('Team Registration Closes June 1', 'This is a reminder that all team registrations for the APU Sports Championship 2026 must be submitted by 11:59 PM on June 1, 2026. Each team must have exactly 5 players registered. Incomplete submissions will be disqualified. Visit the Sign Up page to complete your registration before the deadline.')">Read more →</span>
+                </div>
+            </div>
+
+            <div class="news-card" data-category="announcement">
+                <div class="news-card-header">
+                    <span class="news-tag">Announcement</span>
+                    <span class="news-date">May 25, 2026</span>
+                </div>
+                <div class="news-card-body">
+                    <h3>Volunteer Recruitment Now Open</h3>
+                    <p>We are looking for enthusiastic volunteers to help run the championship. Apply now to be part of the team!</p>
+                    <span class="read-more" onclick="openModal('Volunteer Recruitment Now Open', 'The APU Sports Championship is looking for dedicated volunteers across various roles including event setup, registration desk, media, and first aid support. Volunteers will receive a certificate of participation and a complimentary meal on event days. Head to the Volunteer page to sign up today!')">Read more →</span>
+                </div>
+            </div>
+
+            <div class="news-card" data-category="announcement">
+                <div class="news-card-header">
+                    <span class="news-tag">Announcement</span>
+                    <span class="news-date">May 30, 2026</span>
+                </div>
+                <div class="news-card-body">
+                    <h3>Venue Map Now Available</h3>
+                    <p>A detailed venue map for all event locations has been published. Check the Contact page for directions.</p>
+                    <span class="read-more" onclick="openModal('Venue Map Now Available', 'To help participants and spectators navigate the championship venues, we have published a detailed venue map covering the Main Field, Sports Hall, and Campus Pool. You can find the map on the Contact Us page. Parking is available at Lot B and Lot C.')">Read more →</span>
+                </div>
+            </div>
+
+            <div class="news-card" data-category="deadline">
+                <div class="news-card-header">
+                    <span class="news-tag">Deadline</span>
+                    <span class="news-date">June 2, 2026</span>
+                </div>
+                <div class="news-card-body">
+                    <h3>Appeal Window for Draws Opens</h3>
+                    <p>Teams may submit appeals regarding their draw placements from June 2–4, 2026.</p>
+                    <span class="read-more" onclick="openModal('Appeal Window for Draws Opens', 'Following the official draw ceremony, teams that have concerns about their bracket placements may submit a formal appeal between June 2–4, 2026. Appeals must be submitted via email to the organizing committee with valid reasons. Decisions made by the committee are final.')">Read more →</span>
+                </div>
+            </div>
+
+            <div class="news-card" data-category="result">
+                <div class="news-card-header">
+                    <span class="news-tag">Result</span>
+                    <span class="news-date">June 10, 2026</span>
+                </div>
+                <div class="news-card-body">
+                    <h3>Day 1 Football Results</h3>
+                    <p>Check out the results from Day 1 of the Football Tournament held at the Main Field.</p>
+                    <span class="read-more" onclick="openModal('Day 1 Football Results', 'Day 1 of the Football Tournament saw exciting matches across the group stage. School of Technology edged past School of Business 2–1 in a tightly contested game. School of Engineering secured a convincing 4–0 win. Full standings will be updated on the Event Schedule page.')">Read more →</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModalOnBg(event)">
+        <div class="modal-box">
+            <span class="modal-close" onclick="closeModal()">✕</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalBody"></p>
+        </div>
+    </div>
+
+    <script src="javascript/script.js"></script>
+    <script>
+        function filterNews(category, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('.news-card').forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        function openModal(title, body) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalBody').textContent = body;
+            document.getElementById('modalOverlay').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('active');
+        }
+
+        function closeModalOnBg(e) {
+            if (e.target === document.getElementById('modalOverlay')) closeModal();
+        }
+    </script>
+</body>
+</html>
