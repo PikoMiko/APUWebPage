@@ -23,7 +23,6 @@ headerTemplate.innerHTML = `
         <div class="dropdown-content">
           <a href="FAQ.html">FAQ</a>
           <a href="contactUs.html">Feedback</a>
-          <a href="#">Link 3</a>
         </div>
       </div>
       <a href="Sponsors&Partners.html">Sponsor</a>

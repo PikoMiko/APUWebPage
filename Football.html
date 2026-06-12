@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Football</title>
+    <link href="design.css" rel="stylesheet"/>
+    <link href="format.css" rel="stylesheet"/>
+    <link href="leaderboard.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="card">
+    <div class="labels">
+        <div class="label-top">
+            <div class="racetitle">
+                <p class="minititle">APU SPORTS DAY 2026</p>
+                <h1 class="resultstitle">Match Results</h1>
+            </div>
+        <div class="rounds">
+        <button class="etab active" onclick="switchTab('qf',this)">Quarter-finals</button>
+        <button class="etab" onclick="switchTab('sf',this)">Semi-finals</button>
+        <button class="etab" onclick="switchTab('f',this)">Final</button>
+        </div>
+        </div> <!-- end of label top--> 
+    </div>
+</div>
+
+<div id="qf" class="panel active">
+<div class="sub-bar"><span>Quarter-finals</span><span>4 matches</span></div>
+<div class="match-row">
+    <span class="col-id">#1</span><div class="divider"></div>
+    <span class="col-date">5 June 2026</span><div class="divider"></div>
+    <div class="col-match">
+    <span class="team-home">Lagrange Top Down FC</span>
+    <div class="col-score"><span>5</span><span class="score-div">-</span><span>1</span></div>
+    <span class="team-away">Shouting My Lungs</span>
+    </div>
+</div>
+<div class="match-row">
+    <span class="col-id">#2</span><div class="divider"></div>
+    <span class="col-date">6 June 2026</span><div class="divider"></div>
+    <div class="col-match">
+    <span class="team-home"><span class="winner">P</span>Asahi 4 Life</span>
+    <div class="col-score"><span>3</span><span class="score-div">-</span><span>3</span></div>
+    <span class="team-away">Jazz Music Club</span>
+    </div>
+</div>
+<div class="match-row">
+    <span class="col-id">#3</span><div class="divider"></div>
+    <span class="col-date">7 June 2026</span><div class="divider"></div>
+    <div class="col-match">
+    <span class="team-home">Hydrogen Bomb</span>
+    <div class="col-score"><span>8</span><span class="score-div">-</span><span>2</span></div>
+    <span class="team-away">Sonion</span>
+    </div>
+</div>
+<div class="match-row">
+    <span class="col-id">#4</span><div class="divider"></div>
+    <span class="col-date">7 June 2026</span><div class="divider"></div>
+    <div class="col-match">
+    <span class="team-home">Gold FC</span>
+    <div class="col-score"><span>2</span><span class="score-div">-</span><span>4</span></div>
+    <span class="team-away">Blue Stars</span>
+    </div>
+</div>
+</div>
+
+<div id="sf" class="panel">
+<div class="sub-bar"><span>Semi-finals</span><span>2 matches</span></div>
+<div class="match-row">
+    <span class="col-id">#5</span><div class="divider"></div>
+    <span class="col-date">9 June 2026</span><div class="divider"></div>
+    <div class="col-match">
+    <span class="team-home"><span class="winner">P</span>Lagrange Top Down FC</span>
+    <div class="col-score"><span>1</span><span class="score-div">-</span><span>1</span></div>
+    <span class="team-away">Rockets</span>
+    </div>
+</div>
+<div class="match-row">
+    <span class="col-id">#6</span><div class="divider"></div>
+    <span class="col-date">9 June 2026</span><div class="divider"></div>
+    <div class="col-match">
+    <span class="team-home">Blue Stars</span>
+    <div class="col-score"><span>4</span><span class="score-div">-</span><span>3</span></div>
+    <span class="team-away">Asahi 4 Life</span>
+    </div>
+</div>
+</div>
+
+<div id="f" class="panel">
+<div class="sub-bar"><span>Final</span><span>1 match</span></div>
+<div class="match-row">
+    <span class="col-id">#7</span><div class="divider"></div>
+    <span class="col-date">11 June 2026</span><div class="divider"></div>
+    <div class="col-match">
+    <span class="team-home">Lagrange Top Down FC</span>
+    <div class="col-score"><span>3</span><span class="score-div">-</span><span>2</span></div>
+    <span class="team-away">Blue Stars</span>
+    </div>
+</div>
+</div>
+
+<script src="javascript/results.js"></script>
+<script src="javascript/script.js"></script>
+</body>
+</html>
