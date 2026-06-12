@@ -20,7 +20,7 @@ headerTemplate.innerHTML = `
           <a href="information.html">Information</a>
           <a href="Event schedule.html">Schedule</a>
           <a href="resources.html">Resources</a>
-          <a href="#">Gallery</a>
+          <a href="gallery.html">Gallery</a>
         </div>
       </div>
       
@@ -52,6 +52,24 @@ function initPage() {
   // Безопасный рендеринг навбара и футера
   document.body.prepend(headerTemplate.content.cloneNode(true));
   document.body.append(footerTemplate.content.cloneNode(true));
+
+ const hoverSound = new Audio('elements/multimedia/audio/hover.wav');
+  hoverSound.volume = 0.8;
+
+  document.addEventListener('click', () => {
+    hoverSound.play().then(() => {
+      hoverSound.pause();
+      hoverSound.currentTime = 0;
+    });
+  }, { once: true });
+
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('mouseenter', () => {
+      hoverSound.currentTime = 0;
+      hoverSound.play().catch(e => console.error(e));
+    });
+  });
+
 
   const playerCount = 5;
   const isParticipantFormPage = document.body.id === 'participant-form';
@@ -117,11 +135,6 @@ if (contactForm) {
     }
   });
 }
-
-
-
-
-
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initPage);
