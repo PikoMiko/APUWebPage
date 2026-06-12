@@ -322,8 +322,15 @@ label{
       white-space: nowrap;
     }
 
-    .etab:hover { border-color: #a32d2d; color: #a32d2d; }
-    .etab.active { background: #a32d2d; color: #fff; border-color: #a32d2d; }
+    .etab:hover { 
+        border-color: #a32d2d; 
+        color: #a32d2d; 
+    }
+    .etab.active { 
+        background: #a32d2d; 
+        color: #fff; 
+        border-color: #a32d2d;
+    }
 
     .sub-bar {
       display: flex;
@@ -337,8 +344,15 @@ label{
       margin-bottom: 8px;
     }
 
-    .panel { display: none; flex-direction: column; gap: 4px; }
-    .panel.active { display: flex; }
+    .panel { 
+        display: none; 
+        flex-direction: column; 
+        gap: 4px; 
+    }
+
+    .panel.active { 
+        display: flex; 
+    }
 
     .match-row {
       display: flex;
