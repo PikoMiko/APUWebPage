@@ -40,12 +40,21 @@
     font-style: normal;
 }
 
+/* ИСПРАВЛЕННЫЙ ФИКСИРОВАННЫЙ ХЕДЕР */
 header {
     width: 100%;
-    background-color: #b1121b;
+    background-color: #b1121b; /* Твой базовый красный */
     color: white;
     padding: 0 24px;
     box-sizing: border-box;
+    
+    /* Добавляем жесткую фиксацию сверху экрана */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease; /* Для плавной анимации скрытия из JS */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 footer{
@@ -56,8 +65,7 @@ footer{
     height: 40px;
     text-align: center;
     margin-top: auto;
-    padding-top: auto;
-    
+    padding-top: 10px; /* Сделали фиксированный аккуратный отступ */
 }
 
 .header {
@@ -144,3 +152,165 @@ nav a:hover,
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+/* ГЛОБАЛЬНЫЙ ОТСТУП ДЛЯ ТЕЛА СТРАНИЦЫ */
+/* Чтобы контент на всех страницах из-за фиксированного меню не уползал под него */
+body {
+    padding-top: 80px; 
+}
+
+
+.slider-section {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    margin-top: 20px;
+    background-color: #000;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease, visibility 0.6s;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.slide-content {
+    text-align: center;
+    padding: 20px;
+    max-width: 800px;
+}
+
+.slide-content h2 {
+    font-family: 'GothicHead', sans-serif;
+    font-size: 45px;
+    margin: 0 0 10px 0;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+}
+
+.slide-content p {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    margin: 0 0 20px 0;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+.btn-slider {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #b1121b;
+    color: white;
+    font-family: 'Playfair', sans-serif;
+    font-weight: bold;
+    border-radius: 30px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-slider:hover {
+    transform: scale(1.05);
+    background-color: #d01c26;
+}
+
+/* Стрелочки слайдера */
+.slide-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background 0.2s;
+}
+
+.slide-arrow:hover { background: rgba(177, 18, 27, 0.8); }
+.slide-arrow.prev { left: 20px; }
+.slide-arrow.next { right: 20px; }
+
+/* Контейнер карточек наград */
+.content-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section-title-box {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-title-box h2 {
+    font-family: 'GothicHead', sans-serif;
+    font-size: 38px;
+    color: #b1121b;
+    margin: 0;
+}
+
+.subtitle {
+    font-family: 'Inter', sans-serif;
+    color: #555;
+    font-size: 16px;
+}
+
+/* Сетки */
+.common-grid {
+    display: grid;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.col-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.col-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+
+/* Сами карточки */
+.accent-box {
+    background: #fff;
+    border: 2px solid gold;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.accent-box h3 {
+    margin: 10px 0;
+    font-family: 'GothicHead', sans-serif;
+    font-size: 28px;
+    color: #b1121b;
+}
+
+.accent-box p {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #333;
+    margin: 0;
+}
+
+.award-icon {
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.text-center { text-align: center; }

@@ -1,20 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Home</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - APU Sports Championship 2026</title>
     <link href="design.css" rel="stylesheet"/>
     <link href="format.css" rel="stylesheet"/>    
 </head>
-    <body>
-        <div class="banner-container">
-            <div class="banner-text">
-                <h1>Hello!</h1>
-                <p>ICHI NI SAN ONI CHAN CHINCHIN DAISUKI</p>
+<body>
+
+    <main>
+
+        <section class="slider-section">
+            <a href="participant form.html" class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('elements/multimedia/Images/apulogo.png');">
+                <div class="slide-content">
+                    <h2>APU Sports Championship 2026</h2>
+                    <p>Compete. Connect. Celebrate.</p>
+                    <span class="btn-slider">Register Your Team</span>
+                </div>
+            </a>
+            
+            <a href="Event schedule.html" class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('elements/multimedia/Images/apulogo.png');">
+                <div class="slide-content">
+                    <h2>Witness Greatness</h2>
+                    <p>5 Faculties competing for the ultimate glory.</p>
+                    <span class="btn-slider">Explore Schedule</span>
+                </div>
+            </a>
+            
+            <button class="slide-arrow prev" id="prevSlide">&#10094;</button>
+            <button class="slide-arrow next" id="nextSlide">&#10095;</button>
+        </section>
+
+        <section class="content-container">
+            <div class="section-title-box">
+                <h2>Our Achievements & Awards</h2>
+                <p class="subtitle">Glory and milestones from our previous championship editions</p>
             </div>
-        </div>
-        <div class="homecontent"></div>
-        <script src="javascript/script.js"></script>
-    </body>
+
+            <div class="common-grid col-3">
+                <div class="accent-box white-theme">
+                    <div class="award-icon">🏆</div>
+                    <h3>Best Faculty Award</h3>
+                    <p>Granted to the School of Computing (SoC) for securing the highest aggregate points in the 3rd Edition.</p>
+                </div>
+                <div class="accent-box white-theme">
+                    <div class="award-icon">⚡</div>
+                    <h3>Fair Play Trophy</h3>
+                    <p>Awarded to the School of Engineering (SoE) for demonstrating exceptional sportsmanship and discipline.</p>
+                </div>
+                <div class="accent-box white-theme">
+                    <div class="award-icon">🔥</div>
+                    <h3>Record Breakers</h3>
+                    <p>Over 15 new individual and team track records set during the historic swimming finals.</p>
+                </div>
+            </div>
+
+            <div class="common-grid col-4">
+                <div class="accent-box white-theme">
+                    <h3>3</h3>
+                    <p>Sports Events</p>
+                </div>
+                <div class="accent-box white-theme">
+                    <h3>3</h3>
+                    <p>Event Days</p>
+                </div>
+                <div class="accent-box white-theme">
+                    <h3>200+</h3>
+                    <p>Participants</p>
+                </div>
+                <div class="accent-box white-theme">
+                    <h3>5</h3>
+                    <p>Faculties</p>
+                </div>
+            </div>
+            
+            <div class="accent-box white-theme text-center">
+                <h3>4th Edition Milestones</h3>
+                <p>Building legacy, empowering student athletes.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="javascript/script.js"></script>
+</body>
 </html>
