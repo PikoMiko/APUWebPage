@@ -6,7 +6,7 @@ const headerTemplate = document.createElement('template');
 headerTemplate.innerHTML = `
   <header class="header" id="main-header">
     <a href="home.html" id="home">
-      <img src="elements/multimedia/Images/logo.png" alt="Home" width="55" height="55">
+      <img src="elements/multimedia/Images/apulogo.png" alt="Home" width="145" height="55">
     </a>
     <nav>
       <a href="news.html">News</a>
