@@ -56,6 +56,24 @@ function initPage() {
     document.body.append(footerTemplate.content.cloneNode(true));
   }
 
+const hoverSound = new Audio('elements/multimedia/audio/hover.wav');
+  hoverSound.volume = 0.8;
+
+  document.addEventListener('click', () => {
+    hoverSound.play().then(() => {
+      hoverSound.pause();
+      hoverSound.currentTime = 0;
+    });
+  }, { once: true });
+
+ document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('mouseenter', () => {
+      hoverSound.currentTime = 0;
+      hoverSound.play().catch(e => console.error(e));
+    });
+  });
+
+
   const playerCount = 5;
   const isParticipantFormPage = document.body && document.body.id === 'participant-form';
   const container = isParticipantFormPage ? document.getElementById('players') : null;
