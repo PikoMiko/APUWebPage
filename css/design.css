@@ -6,6 +6,7 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    flex: 1
 }
 
 .banner-text{
@@ -441,7 +442,68 @@ label{
   vertical-align: middle;
 }
 
+
+.gallery-ed {
+    text-align: center;
+}
+
+.large-img {
+    display: block;
+    margin: 0 auto;
+}
+.gallery-ed h2{
+    color: #750B0B;
+}
 .std-img{
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-vid{
+    padding-bottom: 20px;
+    flex:1
+}
+
+.img-row {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.img-container {
+    position: relative;
+    flex: 1;
+    max-width: 32%;
+    overflow: hidden;
+    min-width: 0;
+}
+
+.img-container img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.hover-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    text-align: center;
+    padding: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.img-container:hover .hover-caption {
+    opacity: 1;
 }
