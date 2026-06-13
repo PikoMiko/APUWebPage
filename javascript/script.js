@@ -1,12 +1,10 @@
-// ==========================================
-// 1. ШАБЛОНЫ ДЛЯ ДИНАМИЧЕСКИХ ЭЛЕМЕНТОВ СТРАНИЦЫ
-// ==========================================
+
 
 const headerTemplate = document.createElement('template');
 headerTemplate.innerHTML = `
   <header class="header" id="main-header">
     <a href="home.html" id="home">
-      <img src="elements/multimedia/Images/apulogo.png" alt="Home" width="145" height="55">
+      <img src="elements/multimedia/Images/logo.png" alt="Home" width="55" height="55">
     </a>
     <nav>
       <a href="news.html">News</a>
@@ -20,7 +18,7 @@ headerTemplate.innerHTML = `
           <a href="information.html">Information</a>
           <a href="Event schedule.html">Schedule</a>
           <a href="resources.html">Resources</a>
-          <a href="gallery.html">Gallery</a>
+          <a href="#">Gallery</a>
         </div>
       </div>
       
@@ -31,6 +29,7 @@ headerTemplate.innerHTML = `
         <div class="dropdown-content">
           <a href="FAQ.html">FAQ</a>
           <a href="contactUs.html">Feedback</a>
+          <a href="#">Link 3</a>
         </div>
       </div>
       
@@ -45,34 +44,20 @@ footerTemplate.innerHTML = `
   <footer>All rights reserved</footer>
 `;
 
-// ==========================================
-// 2. ГЛАВНАЯ ФУНКЦИЯ ИНИЦИАЛИЗАЦИИ СТРАНИЦЫ
-// ==========================================
+
+function showDetails(sportName, description) {
+    alert("Event: " + sportName + "\n\nDetails: " + description);
+}
+
+
 function initPage() {
-  // Безопасный рендеринг навбара и футера
-  document.body.prepend(headerTemplate.content.cloneNode(true));
-  document.body.append(footerTemplate.content.cloneNode(true));
-
- const hoverSound = new Audio('elements/multimedia/audio/hover.wav');
-  hoverSound.volume = 0.8;
-
-  document.addEventListener('click', () => {
-    hoverSound.play().then(() => {
-      hoverSound.pause();
-      hoverSound.currentTime = 0;
-    });
-  }, { once: true });
-
-  document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('mouseenter', () => {
-      hoverSound.currentTime = 0;
-      hoverSound.play().catch(e => console.error(e));
-    });
-  });
-
+  if (document.body) {
+    document.body.prepend(headerTemplate.content.cloneNode(true));
+    document.body.append(footerTemplate.content.cloneNode(true));
+  }
 
   const playerCount = 5;
-  const isParticipantFormPage = document.body.id === 'participant-form';
+  const isParticipantFormPage = document.body && document.body.id === 'participant-form';
   const container = isParticipantFormPage ? document.getElementById('players') : null;
 
   if (container) {
@@ -91,13 +76,49 @@ function initPage() {
     }
   }
 
-  // Запускаем общую логику скролла навбара и переключения слайдов
+  initFormFeatures();
+
+
   initScrollAndSlider();
 }
 
-// ==========================================
-// 3. ЧУЖОЙ КОД ДЛЯ ФОРМ И КАРТИНОК
-// ==========================================
+
+function initFormFeatures() {
+
+    const signUpBtn = document.getElementById('confirmBtn'); // Предположим, у них есть кнопка с ID
+    if (signUpBtn) {
+        signUpBtn.addEventListener('click', confirmInfo);
+    }
+
+    // Обработчик загрузки фото/файлов
+    const fileInput = document.getElementById('fileInput');
+    const preview = document.getElementById('preview');
+    if (fileInput && preview) {
+      fileInput.addEventListener('change', function () {
+        const file = this.files[0];
+        if (file) {
+          preview.src = URL.createObjectURL(file);
+        }
+      });
+    }
+
+
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function (event) {
+        const nameInput = document.getElementById('contactName') ? document.getElementById('contactName').value : '';
+        const messageInput = document.getElementById('contactMessage') ? document.getElementById('contactMessage').value : '';
+
+        if (nameInput === '' || messageInput === '') {
+          alert('Please fill in all fields!');
+          event.preventDefault();
+        } else {
+          alert('Thank you, ' + nameInput + '! Your message has been sent successfully.');
+          contactForm.reset();
+        }
+      });
+    }
+}
 
 function confirmInfo() {
     const ask = window.confirm("Are you sure the information below is correct?");
@@ -107,34 +128,60 @@ function confirmInfo() {
     }
 }
 
-// Обработчик загрузки фото/файлов
-const fileInput = document.getElementById('fileInput');
-const preview = document.getElementById('preview');
-if (fileInput && preview) {
-  fileInput.addEventListener('change', function () {
-    const file = this.files[0];
-    if (file) {
-      preview.src = URL.createObjectURL(file);
+
+function initScrollAndSlider() {
+    // Логика плавного скрытия навбара при скролле вниз
+    let lastScroll = 0;
+    const header = document.getElementById("main-header"); 
+
+    if (header) {
+        window.addEventListener("scroll", () => {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (currentScroll > lastScroll && currentScroll > 80) {
+                header.style.transform = "translateY(-100%)"; 
+            } else {
+                header.style.transform = "translateY(0)";      
+            }
+            lastScroll = currentScroll;
+        });
     }
-  });
+
+
+    const slides = document.querySelectorAll(".slide");
+    if (slides.length > 0) {
+        let currentIdx = 0;
+
+        function changeSlide(next = true) {
+            slides[currentIdx].classList.remove("active");
+            if (next) {
+                currentIdx = (currentIdx + 1) % slides.length;
+            } else {
+                currentIdx = (currentIdx - 1 + slides.length) % slides.length;
+            }
+            slides[currentIdx].classList.add("active");
+        }
+
+        const nextBtn = document.getElementById("nextSlide");
+        const prevBtn = document.getElementById("prevSlide");
+
+        if (nextBtn) {
+            nextBtn.addEventListener("click", (e) => {
+                e.preventDefault(); 
+                e.stopPropagation(); 
+                changeSlide(true);
+            });
+        }
+        if (prevBtn) {
+            prevBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                changeSlide(false);
+            });
+        }
+    }
 }
 
-// Контактная форма (Feedback)
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-  contactForm.addEventListener('submit', function (event) {
-    const nameInput = document.getElementById('contactName').value;
-    const messageInput = document.getElementById('contactMessage').value;
-
-    if (nameInput === '' || messageInput === '') {
-      alert('Please fill in all fields!');
-      event.preventDefault();
-    } else {
-      alert('Thank you, ' + nameInput + '! Your message has been sent successfully.');
-      contactForm.reset();
-    }
-  });
-}
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initPage);
