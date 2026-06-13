@@ -18,7 +18,7 @@ headerTemplate.innerHTML = `
           <a href="information.html">Information</a>
           <a href="Event schedule.html">Schedule</a>
           <a href="resources.html">Resources</a>
-          <a href="#">Gallery</a>
+          <a href="gallery.html">Gallery</a>
         </div>
       </div>
       
@@ -29,7 +29,6 @@ headerTemplate.innerHTML = `
         <div class="dropdown-content">
           <a href="FAQ.html">FAQ</a>
           <a href="contactUs.html">Feedback</a>
-          <a href="#">Link 3</a>
         </div>
       </div>
       
