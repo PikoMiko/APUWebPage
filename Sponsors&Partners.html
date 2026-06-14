@@ -42,6 +42,13 @@
             padding: 20px;
             width: 250px;
             background-color: #f9f9f9;
+            transition: background-color 0.3s ease;
+        }
+
+        .sponsor-card a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
         .sponsor-logo {
@@ -58,15 +65,19 @@
 
         <div class="sponsor-grid">
             <div class="sponsor-card">
-                <img src="elements/multimedia/Images/nike-logo.png" alt="Nike Logo" class="sponsor-logo">
-                <h3>Nike</h3>
-                <p>Official sportswear sponsor providing gear for athletes.</p>
+                <a href="https://www.nike.com/my/" target="_blank">
+                    <img src="elements/multimedia/Images/nike-logo.png" alt="Nike Logo" class="sponsor-logo">
+                    <h3>Nike</h3>
+                    <p>Official sportswear sponsor providing gear for athletes.</p>
+                </a>
             </div>
 
             <div class="sponsor-card">
-                <img src="elements/multimedia/Images/gatorade-logo.png" alt="Gatorade Logo" class="sponsor-logo">
-                <h3>Gatorade</h3>
-                <p>Hydration partner keeping participants energized.</p>
+                <a href="https://www.gatorade.com/" target="_blank">
+                    <img src="elements/multimedia/Images/gatorade-logo.png" alt="Gatorade Logo" class="sponsor-logo">
+                    <h3>Gatorade</h3>
+                    <p>Hydration partner keeping participants energized.</p>
+                </a>
             </div>
         </div>
     </div>
@@ -74,7 +85,6 @@
     <!-- JavaScript -->
     <script src="javascript/script.js"></script>
     <script>
-        
         const cards = document.querySelectorAll('.sponsor-card');
         cards.forEach(card => {
             card.addEventListener('mouseenter', () => {
